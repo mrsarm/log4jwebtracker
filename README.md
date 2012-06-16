@@ -97,19 +97,23 @@ License
 The project is licensed under the terms of the [GNU Lesser GPL](http://www.gnu.org/licenses/lgpl.html) _(LGPL)_.
 
 
-Source code
------------
+Binary and Source code
+----------------------
 
-This source code is available in https://github.com/mrsarm/log4jwebtracker.
+This source code is available in [Github](https://github.com/mrsarm/log4jwebtracker).
 
 Also the source code is available in .jar format [here](http://www.log4jwebtracker.com/documents/14713/14799/log4jwebtracker-sources.jar).
+
+The binary version in .jar format, ready to use in your project is [here](http://www.log4jwebtracker.com/documents/14713/14799/log4jwebtracker.jar).
 
 
 About
 -----
-My name is **Mariano Ruiz**, I work as _Java & Web Developer_. I'm from Argentina.
+
+The home page of this project is http://www.log4jwebtracker.com
+
+**Author**: My name is **Mariano Ruiz**, I work as _Java & Web Developer_. I'm from Argentina.
 
 **My Home**: http://www.mrdev.com.ar
-
 
 **Email**: [log4jwebtracker@mrdev.com.ar](mailto:log4jwebtracker@mrdev.com.ar) | [marianoruiz@mrdev.com.ar](mailto:marianoruiz@mrdev.com.ar)
