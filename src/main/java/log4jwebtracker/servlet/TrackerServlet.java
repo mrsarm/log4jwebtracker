@@ -1,5 +1,6 @@
 package log4jwebtracker.servlet;
 
+import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -379,8 +380,7 @@ public class TrackerServlet extends HttpServlet {
 	synchronized private byte[] getJQueryMin() throws IOException {
 		if(jqueryMin==null) {
 			InputStream in = this.getClass().getResourceAsStream("js/jquery-1.6.4.min.js");
-			jqueryMin = new byte[in.available()];
-			in.read(jqueryMin);
+			jqueryMin = toByteArray(in);
 			in.close();
 		}
 		return jqueryMin;
@@ -389,8 +389,7 @@ public class TrackerServlet extends HttpServlet {
 	synchronized private byte[] getJQueryWordWrap() throws IOException {
 		if(jqueryWordWrap==null) {
 			InputStream in = this.getClass().getResourceAsStream("js/jquery.wordWrap.js");
-			jqueryWordWrap = new byte[in.available()];
-			in.read(jqueryWordWrap);
+			jqueryWordWrap = toByteArray(in);
 			in.close();
 		}
 		return jqueryWordWrap;
@@ -399,8 +398,7 @@ public class TrackerServlet extends HttpServlet {
 	synchronized private byte[] getCSS() throws IOException {
 		if(css==null) {
 			InputStream in = this.getClass().getResourceAsStream("css/tracker.css");
-			css = new byte[in.available()];
-			in.read(css);
+			css = toByteArray(in);
 			in.close();
 		}
 		return css;
@@ -409,10 +407,26 @@ public class TrackerServlet extends HttpServlet {
 	synchronized private byte[] getLogo() throws IOException {
 		if(logo==null) {
 			InputStream in = this.getClass().getResourceAsStream("img/logo.png");
-			logo = new byte[in.available()];
-			in.read(logo);
+			logo = toByteArray(in);
 			in.close();
 		}
 		return logo;
 	}
+	
+	/**
+     * Get the contents of an <code>InputStream</code> as a <code>byte[]</code>.
+     * <p>
+     * This method buffers the input internally, so there is no need to use a
+     * <code>BufferedInputStream</code>.
+     * 
+     * @param input  the <code>InputStream</code> to read from
+     * @return the requested byte array
+     * @throws NullPointerException if the input is null
+     * @throws IOException if an I/O error occurs
+     */
+    private byte[] toByteArray(InputStream input) throws IOException {
+        ByteArrayOutputStream output = new ByteArrayOutputStream();
+        StreamUtils.readStream(input, output, BUFFER_SIZE);
+        return output.toByteArray();
+    }
 }
