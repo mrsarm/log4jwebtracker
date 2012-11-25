@@ -275,9 +275,9 @@ public class TrackerServlet extends HttpServlet {
 		}
 		out.print("");
 		if (request.getAttribute("action").toString().indexOf("/log") != -1) {
-			out.print("$('#wrapCheck').click(function() {var textarea = $('#logText').get();if( ! $(this).attr('checked') ) {$(textarea).wordWrap('on');} else {$(textarea).wordWrap('off');}});$('#refresh').click(function() {$('#loading-mask').text('Loading...');$('#loading-mask').removeClass('error');$('#loading-mask').show();var data = {appender: $('#appender').val()};if($('#lines').val()!='') {data.lines = $('#lines').val();}$.ajax({url: '");
+			out.print("$('#wrapCheck').click(function() {var textarea = $('#logText').get();if( ! $(this).attr('checked') ) {$(textarea).wordWrap('on');} else {$(textarea).wordWrap('off');}});var refresh = function() {$('#loading-mask').text('Loading...');$('#loading-mask').removeClass('error');$('#loading-mask').show();var data = {appender: $('#appender').val()};if($('#lines').val()!='') {data.lines = $('#lines').val();}$.ajax({url: '");
 			out.print((String) request.getAttribute("baseAction"));
-			out.print("/taillog',data: data,dataType: 'text',cache: false,success: function(data) {if(data.indexOf('TrackerError')==-1) {$('#loading-mask').hide();$('#logText').val(data);$('#logText').get(0).scrollTop = $('#logText').get(0).scrollHeight;} else {$('#loading-mask').addClass('error');$('#loading-mask').text('Error: Check the log manually');}}});});$('#download').click(function() {});");
+			out.print("/taillog',data: data,dataType: 'text',cache: false,success: function(data) {if(data.indexOf('TrackerError')==-1) {$('#loading-mask').hide();$('#logText').val(data);$('#logText').get(0).scrollTop = $('#logText').get(0).scrollHeight;} else {$('#loading-mask').addClass('error');$('#loading-mask').text('Error: Check the log manually');}}});};$('#refresh').click(refresh);$('#lines').bind('keypress', function(e) { if(e.keyCode==13) { refresh(); return false; } });$('#download').click(function() {});");
 		}
 		out.print("});</script><!--[if !IE 7]><style type=\"text/css\">#wrap { display:table;height:100% }</style><![endif]--></head><body><div id=\"wrap\"><div id=\"header\"><h1><a href=\"");
 		out.print((String) request.getAttribute("baseAction"));
@@ -300,7 +300,7 @@ public class TrackerServlet extends HttpServlet {
 		if (request.getAttribute("action").toString().indexOf("/config") != -1) {
 			List loggers = (List) request.getAttribute("loggers");
 
-			out.print("<div id=\"configuration\"><div id=\"filterContainer\"><div id=\"filterTextContainer\"><p>Filter:</p></div><div id=\"filterInputContainer\"><input type=\"text\" id=\"filter\" name=\"filter\"       placeholder=\"Enter the name or part of it.\" /></div></div><div class=\"clear\"></div><div id=\"loggersContainer\"><table id=\"loggers\" cellpadding=\"0\" cellspacing=\"0\" border=\"0\"><thead><tr><th>Logger</th><th>Level</th></tr></thead><tbody>");
+			out.print("<div id=\"configuration\"><div id=\"filterContainer\"><div id=\"filterTextContainer\"><p>Filter:</p></div><div id=\"filterInputContainer\"><input type=\"text\" id=\"filter\" name=\"filter\"       placeholder=\"Enter the name or part of it\" /></div></div><div class=\"clear\"></div><div id=\"loggersContainer\"><table id=\"loggers\" cellpadding=\"0\" cellspacing=\"0\" border=\"0\"><thead><tr><th>Logger</th><th>Level</th></tr></thead><tbody>");
 
 			for (int i = 0; i < loggers.size(); i++) {
 				Logger logger = (Logger) loggers.get(i);
@@ -374,7 +374,7 @@ public class TrackerServlet extends HttpServlet {
 		}
 		out.print("</div></div><div id=\"footer\"><div id=\"back-link\"><span><a href=\"");
 		out.print(request.getContextPath());
-		out.print("/\">&uarr; Go to the application</a></span></div><div id=\"copyright\"><span>Copyright 2011&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;<i>Power by&nbsp;&nbsp;</i><a href=\"http://www.log4jwebtracker.com\" target=\"_blank\">Log4j Web Tracker</a> v1.0</span></div></div></body></html>");
+		out.print("/\">&uarr; Go to the application</a></span></div><div id=\"copyright\"><span>Copyright 2011&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;<i>Power by&nbsp;&nbsp;</i><a href=\"http://www.log4jwebtracker.com\" target=\"_blank\">Log4j Web Tracker</a> v1.0.1</span></div></div></body></html>");
 	}
 
 	synchronized private byte[] getJQueryMin() throws IOException {

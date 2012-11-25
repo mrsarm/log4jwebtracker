@@ -50,11 +50,11 @@ Also can use the automatic setup (the configuration file must be placed on the `
 
 
 
-Requeriments
+Requirements
 ------------
 
 * Java 1.4+
-* Servlet container 2.3+ (like Tomcat 4.1 or higher, or WebSphere 5.0+, etc.)
+* Servlet container 2.3+ (like Apache Tomcat 4.1 or higher, or WebSphere 5.0+, etc.)
 
 
 Dependencies
@@ -70,7 +70,7 @@ If your project is building using **Apache Maven 2** or above, put this artifact
         <dependency>
             <groupId>log4jwebtracker</groupId>
             <artifactId>log4jwebtracker</artifactId>
-            <version>1.0.0</version>
+            <version>1.0.1</version>
         </dependency>
 
 
