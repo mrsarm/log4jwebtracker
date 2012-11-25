@@ -5,7 +5,6 @@ Log4j Web Tracker
 
 <img src="https://raw.github.com/mrsarm/log4jwebtracker/master/artwork/log4jwebtracker_config.png" />
 
-
 Is distributed in a small .jar file _(log4jwebtracker.jar)_, which must be placed in the `WEB-INF/lib` folder of the java web application.
 
 To configure it, in the `WEB-INF/web.xml` file you must add a mapping like this:
@@ -29,7 +28,11 @@ Introduction
 
 In the first tab you can setup the level of each logger of the application, including the `root` logger. The configuration are applied at the moment, but not change the original configuration placed in `log4j.properties`, `log4j.xml` or any configuration file, if you restart the application, the original configuration is applied again.
 
+<img src="https://raw.github.com/mrsarm/log4jwebtracker/master/artwork/log4jwebtracker_setting.png" />
+
 In the second tab named _**Log**_, you can select a appender file and view the last content in the webpage (the numbers of line are configurable), or download them.
+
+<img src="https://raw.github.com/mrsarm/log4jwebtracker/master/artwork/log4jwebtracker_log.png" />
 
 
 Log4j configuration
