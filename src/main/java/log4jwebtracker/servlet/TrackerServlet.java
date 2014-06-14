@@ -300,7 +300,7 @@ public class TrackerServlet extends HttpServlet {
 		if (request.getAttribute("action").toString().indexOf("/config") != -1) {
 			List loggers = (List) request.getAttribute("loggers");
 
-			out.print("<div id=\"configuration\"><div id=\"filterContainer\"><div id=\"filterTextContainer\"><p>Filter:</p></div><div id=\"filterInputContainer\"><input type=\"text\" id=\"filter\" name=\"filter\"       placeholder=\"Enter the name or part of it\" /></div></div><div class=\"clear\"></div><div id=\"loggersContainer\"><table id=\"loggers\" cellpadding=\"0\" cellspacing=\"0\" border=\"0\"><thead><tr><th>Logger</th><th>Level</th></tr></thead><tbody>");
+			out.print("<div id=\"configuration\"><div id=\"filterContainer\"><div id=\"filterTextContainer\"><p>Filter:</p></div><div id=\"filterInputContainer\"><input type=\"text\" id=\"filter\" name=\"filter\"       placeholder=\"Enter the name or part of it\" spellcheck=\"false\"/></div></div><div class=\"clear\"></div><div id=\"loggersContainer\"><table id=\"loggers\" cellpadding=\"0\" cellspacing=\"0\" border=\"0\"><thead><tr><th>Logger</th><th>Level</th></tr></thead><tbody>");
 
 			for (int i = 0; i < loggers.size(); i++) {
 				Logger logger = (Logger) loggers.get(i);
@@ -370,11 +370,11 @@ public class TrackerServlet extends HttpServlet {
 				out.print(fap.getName());
 				out.print("</option>");
 			}
-			out.print("</select><label for=\"lines\">Lines: </label><input type=\"number\" id=\"lines\" name=\"lines\" value=\"20\" size=\"4\" style=\"margin-right: 5px;\" /><button type=\"button\" id=\"refresh\">Refresh</button><button type=\"submit\" id=\"download\">Download</button></div></form><div style=\"overflow: hidden;\"><div id=\"loading-mask\" style=\"display: none;\"></div></div></div><textarea id=\"logText\" rows=\"20\"></textarea></div>");
+			out.print("</select><label for=\"lines\">Lines: </label><input type=\"number\" id=\"lines\" name=\"lines\" value=\"20\" size=\"4\" style=\"margin-right: 5px;\" /><button type=\"button\" id=\"refresh\">Refresh</button><button type=\"submit\" id=\"download\">Download</button></div></form><div style=\"overflow: hidden;\"><div id=\"loading-mask\" style=\"display: none;\"></div></div></div><textarea id=\"logText\" rows=\"20\" spellcheck=\"false\"></textarea></div>");
 		}
 		out.print("</div></div><div id=\"footer\"><div id=\"back-link\"><span><a href=\"");
 		out.print(request.getContextPath());
-		out.print("/\">&uarr; Go to the application</a></span></div><div id=\"copyright\"><span>Copyright 2011&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;<i>Power by&nbsp;&nbsp;</i><a href=\"http://www.log4jwebtracker.com\" target=\"_blank\">Log4j Web Tracker</a> v1.0.1</span></div></div></body></html>");
+		out.print("/\">&uarr; Go to the application</a></span></div><div id=\"copyright\"><span>Copyright 2011-2014&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;<i>Power by&nbsp;&nbsp;</i><a href=\"http://www.log4jwebtracker.com\" target=\"_blank\">Log4j Web Tracker</a> v1.0.2</span></div></div></body></html>");
 	}
 
 	synchronized private byte[] getJQueryMin() throws IOException {
