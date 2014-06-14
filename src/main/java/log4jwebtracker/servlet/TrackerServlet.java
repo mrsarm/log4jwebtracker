@@ -270,11 +270,11 @@ public class TrackerServlet extends HttpServlet {
 		out.print("/js/jquery-1.6.4.min.js\"></script><script type=\"text/javascript\" src=\"");
 		out.print((String) request.getAttribute("baseAction"));
 		out.print("/js/jquery.wordWrap.js\"></script><script>$(document).ready( function() {");
-		if (request.getAttribute("action").toString().indexOf("/config") != -1) {
+		if (request.getPathInfo().equals("/config")) {
 			out.print("$('#filter').keyup(function() {var filterKey = this.value.toLowerCase();$('#loggers tbody tr').filter(function() {return $('select', this)[0].name.toLowerCase().indexOf(filterKey) == -1;}).hide();$('#loggers tbody tr').filter(function() {return $('select', this)[0].name.toLowerCase().indexOf(filterKey) != -1;}).show();});$('select').change(function() {$(this).parent().submit();});");
 		}
 		out.print("");
-		if (request.getAttribute("action").toString().indexOf("/log") != -1) {
+		if (request.getPathInfo().equals("/log")) {
 			out.print("$('#wrapCheck').click(function() {var textarea = $('#logText').get();if( ! $(this).attr('checked') ) {$(textarea).wordWrap('on');} else {$(textarea).wordWrap('off');}});var refresh = function() {$('#loading-mask').text('Loading...');$('#loading-mask').removeClass('error');$('#loading-mask').show();var data = {appender: $('#appender').val()};if($('#lines').val()!='') {data.lines = $('#lines').val();}$.ajax({url: '");
 			out.print((String) request.getAttribute("baseAction"));
 			out.print("/taillog',data: data,dataType: 'text',cache: false,success: function(data) {if(data.indexOf('TrackerError')==-1) {$('#loading-mask').hide();$('#logText').val(data);$('#logText').get(0).scrollTop = $('#logText').get(0).scrollHeight;} else {$('#loading-mask').addClass('error');$('#loading-mask').text('Error: Check the log manually');}}});};$('#refresh').click(refresh);$('#lines').bind('keypress', function(e) { if(e.keyCode==13) { refresh(); return false; } });$('#download').click(function() {});");
@@ -286,18 +286,18 @@ public class TrackerServlet extends HttpServlet {
 		out.print("/img/logo.png') no-repeat; display: block; height: 96px;\"></a></h1></div><div id=\"navcontainer\"><ul id=\"navlist\"><li><a href=\"");
 		out.print((String) request.getAttribute("baseAction"));
 		out.print("/config\"   ");
-		if (request.getAttribute("action").toString().indexOf("/config") != -1) {
+		if (request.getPathInfo().equals("/config")) {
 			out.print("class=\"active\" ");
 		}
 		out.print(">Configuration</a></li><li><a href=\"");
 		out.print((String) request.getAttribute("baseAction"));
 		out.print("/log\"   ");
-		if (request.getAttribute("action").toString().indexOf("/log") != -1) {
+		if (request.getPathInfo().equals("/log")) {
 			out.print("class=\"active\" ");
 		}
 		out.print(" >Log</a></li></ul></div><div class=\"clear\"></div><div id=\"main\">");
 
-		if (request.getAttribute("action").toString().indexOf("/config") != -1) {
+		if (request.getPathInfo().equals("/config")) {
 			List loggers = (List) request.getAttribute("loggers");
 
 			out.print("<div id=\"configuration\"><div id=\"filterContainer\"><div id=\"filterTextContainer\"><p>Filter:</p></div><div id=\"filterInputContainer\"><input type=\"text\" id=\"filter\" name=\"filter\"       placeholder=\"Enter the name or part of it\" spellcheck=\"false\"/></div></div><div class=\"clear\"></div><div id=\"loggersContainer\"><table id=\"loggers\" cellpadding=\"0\" cellspacing=\"0\" border=\"0\"><thead><tr><th>Logger</th><th>Level</th></tr></thead><tbody>");
@@ -354,7 +354,7 @@ public class TrackerServlet extends HttpServlet {
 			out.print("</tbody></table></div></div>");
 		}
 		out.print("");
-		if (request.getAttribute("action").toString().indexOf("/log") != -1) {
+		if (request.getPathInfo().equals("/log")) {
 			out.print("<div id=\"log\"><div id=\"options\"><div style=\"float: left;\"><input type=\"checkbox\" id=\"wrapCheck\" />&nbsp;<label for=\"wrapCheck\">No wrap log</label></div><form action=\"");
 			out.print((String) request.getAttribute("baseAction"));
 			out.print("/getlog\"><div style=\"float: right;\"><label for=\"appender\">File appender: </label><select id=\"appender\" name=\"appender\">");
