@@ -6,7 +6,7 @@
 	<groupId>log4jwebtracker</groupId>
 	<artifactId>log4jwebtracker</artifactId>
 	<packaging>jar</packaging>
-	<version>1.0.1</version>
+	<version>1.0.2</version>
 	<name>log4jwebtracker</name>
 	<url>http://www.log4jwebtracker.com</url>
 
