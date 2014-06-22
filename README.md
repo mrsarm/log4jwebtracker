@@ -35,7 +35,7 @@ Introduction
 In the first tab you can setup the level of each logger of the application, including the `root` logger.
 The configuration are applied at the moment, but not change the original configuration placed
 in `log4j.properties`, `log4j.xml` or any configuration file, if you restart the application,
-the original configuration is applied again.
+the original configuration will applied again.
 
 <img src="https://raw.github.com/mrsarm/log4jwebtracker/master/artwork/log4jwebtracker_setting.png" />
 
@@ -128,7 +128,7 @@ Binary and Source Code
 
 This source code is available in [Github](https://github.com/mrsarm/log4jwebtracker).
 
-Also the source code is available in .jar format
+Also the source is available in .jar format
 [here](http://www.log4jwebtracker.com/documents/14713/14799/log4jwebtracker-sources.jar).
 
 The binary version in .jar format, ready to use for your project is
