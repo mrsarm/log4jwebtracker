@@ -3,7 +3,7 @@ Log4j Web Tracker
 
 **Log4j Web Tracker** is an _open source_ web tool to setup at runtime the
 [Apache Log4j](http://logging.apache.org/log4j/) configuration loggers of an application.
-It also has a tab that allows read the log at runtime, or download them.
+It also has a tab that allows read the logs at runtime, or download them.
 
 <img src="https://raw.github.com/mrsarm/log4jwebtracker/master/artwork/log4jwebtracker_config.png" />
 
