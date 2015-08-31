@@ -138,10 +138,6 @@ The binary version in .jar format, ready to use for your project is
 About
 -----
 
-The home page of this project is http://www.log4jwebtracker.com
-
 **Author**: My name is **Mariano Ruiz**, I work as _Software & Web Developer_. I'm from Argentina.
 
-**My Home**: http://www.mrdev.com.ar
-
-**Email**: [log4jwebtracker@mrdev.com.ar](mailto:log4jwebtracker@mrdev.com.ar) | [marianoruiz@mrdev.com.ar](mailto:marianoruiz@mrdev.com.ar)
+**My Home**: http://www.mrdev.com.ar | **Email**: [marianoruiz@mrdev.com.ar](mailto:marianoruiz@mrdev.com.ar)
