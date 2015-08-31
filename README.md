@@ -129,10 +129,10 @@ Binary and Source Code
 This source code is available in [Github](https://github.com/mrsarm/log4jwebtracker).
 
 Also the source is available in .jar format
-[here](http://www.log4jwebtracker.com/documents/14713/14799/log4jwebtracker-sources.jar).
+[here](http://repo.log4jwebtracker.com/maven2/log4jwebtracker/log4jwebtracker/1.0.2/log4jwebtracker-1.0.2-sources.jar).
 
 The binary version in .jar format, ready to use for your project is
-[here](http://www.log4jwebtracker.com/documents/14713/14799/log4jwebtracker.jar).
+[here](http://repo.log4jwebtracker.com/maven2/log4jwebtracker/log4jwebtracker/1.0.2/log4jwebtracker-1.0.2.jar).
 
 
 About
